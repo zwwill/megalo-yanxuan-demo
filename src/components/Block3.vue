@@ -53,7 +53,6 @@
         width: 350rpx;
         margin-top: 15rpx;
         overflow: hidden;
-        lines:1;
         white-space: nowrap;
         text-overflow: ellipsis;
     }

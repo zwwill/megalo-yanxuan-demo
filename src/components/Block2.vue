@@ -97,7 +97,6 @@
         width: 286rpx;
         margin-top: 16rpx;
         overflow: hidden;
-        lines:1;
         white-space: nowrap;
         text-overflow: ellipsis;
     }
@@ -108,7 +107,6 @@
         margin-top: 8rpx;
         color:#7f7f7f;
         overflow: hidden;
-        lines:1;
         white-space: nowrap;
         text-overflow: ellipsis;
     }
@@ -118,7 +116,6 @@
         margin-top: 16rpx;
         color:#b4282d;
         overflow: hidden;
-        lines:1;
         white-space: nowrap;
         text-overflow: ellipsis;
     }

@@ -82,7 +82,6 @@
         font-size: 34rpx;
         flex: 1;
         overflow: hidden;
-        lines:1;
         text-overflow: ellipsis;
     }
     .price{
@@ -96,7 +95,6 @@
         padding-left: 20rpx;
         padding-right: 20rpx;
         overflow: hidden;
-        lines:2;
         text-overflow: ellipsis;
         color:#666;
     }
