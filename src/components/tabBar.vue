@@ -8,26 +8,26 @@
         <!--</div>-->
 
         <div class="bar-item" @click="tabTo('home')">
-            <text class="bar-ic iconfont" :class="[this.isActive('home')]">&#xe660;</text>
-            <text class="bar-txt" :class="[this.isActive('home')]">首页</text>
+            <div class="bar-ic iconfont" :class="[this.isActive('home')]">&#xe660;</div>
+            <div class="bar-txt" :class="[this.isActive('home')]">首页</div>
         </div>
         <div class="bar-item" @click="tabTo('topic')">
-            <text class="bar-ic iconfont" :class="[this.pIndexKey == 'topic'?'bar-active':'']">&#xe744;</text>
-            <text class="bar-txt" :class="[this.pIndexKey == 'topic'?'bar-active':'']">专题</text>
-            <text class="notice-dot"></text>
+            <div class="bar-ic iconfont" :class="[this.pIndexKey == 'topic'?'bar-active':'']">&#xe744;</div>
+            <div class="bar-txt" :class="[this.pIndexKey == 'topic'?'bar-active':'']">专题</div>
+            <div class="notice-dot"></div>
         </div>
         <div class="bar-item" @click="tabTo('class')">
-            <text class="bar-ic iconfont" :class="[this.isActive('class')]">&#xe605;</text>
-            <text class="bar-txt" :class="[this.isActive('class')]">分类</text>
+            <div class="bar-ic iconfont" :class="[this.isActive('class')]">&#xe605;</div>
+            <div class="bar-txt" :class="[this.isActive('class')]">分类</div>
         </div>
         <div class="bar-item" @click="tabTo('shop')">
-            <text class="bar-ic iconfont" :class="[this.isActive('shop')]">&#xe61a;</text>
-            <text class="bar-txt" :class="[this.isActive('shop')]">购物车</text>
+            <div class="bar-ic iconfont" :class="[this.isActive('shop')]">&#xe61a;</div>
+            <div class="bar-txt" :class="[this.isActive('shop')]">购物车</div>
         </div>
         <div class="bar-item" @click="tabTo('my')">
-            <text class="bar-ic iconfont" :class="[this.isActive('my')]">&#xe639;</text>
-            <text class="bar-txt" :class="[this.isActive('my')]">个人</text>
-            <text class="i-notice">2</text>
+            <div class="bar-ic iconfont" :class="[this.isActive('my')]">&#xe639;</div>
+            <div class="bar-txt" :class="[this.isActive('my')]">个人</div>
+            <div class="i-notice">2</div>
         </div>
     </div>
 </template>
@@ -36,9 +36,11 @@
         font-family:iconfont;
     }
     .wrapper{
+        display:flex;
         position: fixed;
         bottom: 0;
         left: 0;right: 0;
+        z-index: 10;
         height: 90rpx;
         flex-wrap: nowrap;
         flex-direction: row;
@@ -89,8 +91,6 @@
     }
 </style>
 <script>
-
-    var modal = weex.requireModule('modal');
     export default {
         computed:{
         },

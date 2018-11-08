@@ -14,28 +14,31 @@
             <block-2 hasMore=true hotGoods=true :head="recommend.head2" :goods="recommend.goods2"></block-2>
             <block-3 :goods="goodsList"></block-3>
         </section>
+        <tab-bar></tab-bar>
     </div>
 </template>
 
 <script>
     // import util from '../util';
     import mixins from '../../mixins'
+    import tabBar from '../../components/tabBar.vue';
     import Header from '../../components/Header.vue';
-    import topChannel from '../../components/topChannel.vue';
-    import YXSlider from '../../components/YXSlider.vue';
     import Block1 from '../../components/Block1.vue';
     import Block2 from '../../components/Block2.vue';
     import Block3 from '../../components/Block3.vue';
+    import YXSlider from '../../components/YXSlider.vue';
+    import topChannel from '../../components/topChannel.vue';
     export default {
         mpType: 'page',
         mixins: [mixins],
         components: {
-            'home-header': Header,
-            'top-channel': topChannel,
-            'yx-slider': YXSlider,
+            'tab-bar': tabBar,
             'block-1': Block1,
             'block-2': Block2,
-            'block-3': Block3
+            'block-3': Block3,
+            'yx-slider': YXSlider,
+            'home-header': Header,
+            'top-channel': topChannel,
         },
         data () {
             return {
@@ -212,6 +215,9 @@
             }
         },
         created () {
+            /*
+            * demo 使用假数据
+            */
             // this.GET('api/home/index', res => {
             //     let result = res.data.result;
             //     this.YXBanners = result['banners'];

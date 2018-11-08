@@ -27,6 +27,7 @@
         width: 750rpx;
         padding: 10rpx;
         font-size: 30rpx;
+        box-sizing: border-box;
     }
     .gb-box{
         padding: 16rpx;
