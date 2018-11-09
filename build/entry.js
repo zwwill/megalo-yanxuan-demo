@@ -1,22 +1,47 @@
 'use strict'
-const glob = require('glob')
-const { resolve } = require('./util')
+const fs = require('fs')
+const path = require( 'path' )
+const { walk4Obj } = require('./util')
+const exp4parse = /\/\*[^*]*\*+(?:[^\/*][^*]*\*+)*\/|\/\/[^\r\n]*|\s/g
 
 // 获取指定目录下符合glob的所有文件
-function getEntry(globPath) {
-    var files = glob.sync(globPath);
-    var entries = {},
-        pageName;
+function getEntry(file) {
+    let entries = {},
+        txt = '',
+        mainObj = {},
+        pages,
+        subpackages
 
-    files.forEach((entry) => {
-        pageName = entry.match(/\/(pages\/[^\/.]*\/index)\.js$/)[1];
-        entries[pageName] = entry;
-    })
-    return entries;
+    try {
+        txt = fs.readFileSync(file,'utf8')
+        txt = txt.replace(exp4parse,'')
+        mainObj = walk4Obj(txt,'exportdefault')['config'] || {}
+
+        pages = mainObj.pages || []
+        subpackages = mainObj.subpackages || []
+        
+        pages.forEach(p=>{
+            entries[p] = path.resolve(`src/${p}.js`)
+        })
+
+        subpackages.forEach(sp=>{
+            let {root, pages} = sp
+            if(root && pages.length>0){
+                pages.forEach(p=>{
+                    entries[`${root}/${p}`] = path.resolve(`src/${root}/${p}.js`)
+                })
+            }
+        })
+        
+    } catch (e) {
+        console.log(e)
+    }
+
+    return entries
 }
 
-module.exports = (()=> {
+module.exports = (() => {
     let entry = {}
-    entry = getEntry(resolve('src/pages/*/index.js'));
+    entry = getEntry(path.resolve( __dirname, '../src/index.js'))
     return entry
 })()

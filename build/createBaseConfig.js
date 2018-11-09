@@ -100,7 +100,8 @@ function createBaseConfig( platform = 'wechat' ) {
             'css-loader',
             'sass-loader',
           ]
-        }
+        },
+
       ]
     },
 
@@ -109,7 +110,15 @@ function createBaseConfig( platform = 'wechat' ) {
       new MiniCssExtractPlugin( {
         filename: `./static/css/[name].${cssExt}`,
       } ),
-    ]
+    ],
+    stats:{
+      env: true,
+      colors: true,
+      modules: false,
+      children: false,
+      chunks: false,
+      entrypoints: false,
+    }
   }
 }
 

@@ -38,7 +38,7 @@
             'block-3': Block3,
             'yx-slider': YXSlider,
             'home-header': Header,
-            'top-channel': topChannel,
+            'top-channel': topChannel
         },
         data () {
             return {

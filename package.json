@@ -1,5 +1,5 @@
 {
-  "name": "megalo-yanxuan",
+  "name": "megalo-yanxuan-demo",
   "version": "1.0.0",
   "description": "a megalo project",
   "main": "index.js",
@@ -9,7 +9,7 @@
     "dev:wechat": "webpack --config ./build/webpack.config.wechat.js -w"
   },
   "keywords": [],
-  "author": "zwwill <zwwill7@163.com>",
+  "author": "木羽 <zwwill7@163.com>",
   "license": "ISC",
   "devDependencies": {
     "@megalo/target": "^0.2.0-0",
