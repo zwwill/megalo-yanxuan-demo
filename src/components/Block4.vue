@@ -1,11 +1,11 @@
 <template>
     <div class="wrapper">
-        <scroller class="tp-box" scroll-direction="horizontal" show-scrollbar=false>
+        <section class="tp-box">
             <div class="i-tp" v-for="(i,index) in topics" :key="index">
                 <image class="tp-img" resize="cover" :src="i.img" />
                 <text class="tp-name">{{i.name}}</text>
             </div>
-        </scroller>
+        </section>
     </div>
 </template>
 <style scoped>

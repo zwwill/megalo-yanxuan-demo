@@ -1,24 +1,24 @@
 <template>
     <div class="wrapper">
         <div class="tlt-box" v-if="newGoods">
-            <dev class="tlt tlt-new">{{head.tlt}}</dev>
-            <dev class="btn-all btn-new" @click="jumpWeb(head.url)">查看全部 ></dev>
+            <div class="tlt tlt-new">{{head.tlt}}</div>
+            <div class="btn-all btn-new" @click="jumpWeb(head.url)">查看全部 ></div>
             <image class="tlt-image" resize="cover" src="http://doc.zwwill.com/yanxuan/imgs/bg-new.png" />
         </div>
         <div class="tlt-box" v-else-if="hotGoods">
-            <dev class="tlt tlt-hot">{{head.tlt}}</dev>
-            <dev class="btn-all btn-hot" @click="jumpWeb(head.url)">查看全部 ></dev>
+            <div class="tlt tlt-hot">{{head.tlt}}</div>
+            <div class="btn-all btn-hot" @click="jumpWeb(head.url)">查看全部 ></div>
             <image class="tlt-image" resize="cover" src="http://doc.zwwill.com/yanxuan/imgs/bg-hot.png" />
         </div>
-        <div class="box" scroll-direction="horizontal" show-scrollbar=false>
+        <div class="box">
             <div class="i-good" v-for="(i,index) in goods" :key="index">
                 <image class="gd-img" resize="cover" :src="i.img" />
-                <dev class="gd-tlt">{{i.tlt}}</dev>
-                <dev class="gd-info">{{i.info}}</dev>
-                <dev class="gd-price">¥{{i.price}}</dev>
+                <div class="gd-tlt">{{i.tlt}}</div>
+                <div class="gd-info">{{i.info}}</div>
+                <div class="gd-price">¥{{i.price}}</div>
             </div>
             <div class="i-good" v-if="hasMore">
-                <dev class="gd-more">查看全部</dev>
+                <div class="gd-more">查看全部</div>
             </div>
         </div>
     </div>

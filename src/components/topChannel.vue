@@ -1,6 +1,6 @@
 <template>
     <div class="wrapper">
-        <section class="scroller" @click="chooseChannel" scroll-direction="horizontal" loadmoreoffset="750rpx" show-scrollbar=false>
+        <section class="scroller" @click="chooseChannel">
             <div class="j-uline" :style="jLPosition" ref="jcLine"></div>
             <text class="i-c c-act">推荐</text>
             <text class="i-c">限时购</text>
@@ -27,13 +27,14 @@
     .wrapper{
         width: 750rpx;
         position: fixed;
-        top: 70rpx;
+        top: 80rpx;
         height: 54rpx;
         padding-top: 10rpx;
         z-index: 10;
         border-bottom-width: 1rpx;
         border-bottom-color: #d9d9d9;
         background-color: #fff;
+        box-sizing: border-box;
     }
     .scroller{
         position: relative;
@@ -64,9 +65,9 @@
     }
     .more{
         position: absolute;
-        top: 0;
+        top: 10rpx;
         right: 0;
-        height: 52rpx;
+        height: 42rpx;
         width: 100rpx;
         background-color: #fafafa;
         text-align: center;

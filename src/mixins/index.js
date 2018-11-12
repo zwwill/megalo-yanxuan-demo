@@ -7,20 +7,25 @@ export default {
             // }
         },
         GET (api, callback) {
-            wx.request({
+            let { platform } = this.$mp || {},
+                request = ()=>{}
+            switch(platform) {
+                case 'wechat':
+                    request = wx && wx.request
+                break;
+                case 'alipay':
+                    request = my && my.httpRequest
+                break;
+                case 'swan':
+                    request = swan && swan.request
+                break;
+                default:
+                break;
+            }
+            request && request({
                 url: `https://doc.zwwill.com/yanxuan/${api}`,
                 success: callback
             })
-            // axios.get(`http://cdn.zwwill.com/yanxuan/${api}`)
-            // .then((data)=>{
-            //     console.log('-----',data)
-            // })
-            // return stream.fetch({
-            //     method: 'GET',
-            //     type: 'json',
-            //     url: 'http://cdn.zwwill.com/yanxuan/' + api
-            //     // url: 'http://10.242.69.181:8089/yanxuan/' + api
-            // }, callback)
         }
 
     }

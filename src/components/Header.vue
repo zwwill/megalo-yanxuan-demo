@@ -20,7 +20,9 @@
         position: fixed;
         top: 0;
         left: 0;right: 0;
-        height: 70rpx;
+        height: 80rpx;
+        padding-top: 10rpx;
+        box-sizing: border-box;
         display: flex;
         flex-wrap: nowrap;
         flex-direction: row;
